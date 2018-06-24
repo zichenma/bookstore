@@ -1,0 +1,16 @@
+@(bookForm : Form[Book])
+@import helper._
+@import views.html.partials._booksFormFields
+
+@layout("Edit Book") {
+    <h1>Edit Book</h1>
+    @helper.form(action = helper.CSRF(routes.BooksController.update())) {
+
+        @_booksFormFields(bookForm)
+
+        <button class="btn btn-primary" type="submit">
+            Save Book
+        </button>
+    }
+
+}
